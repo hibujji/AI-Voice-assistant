@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/11AvzWNoTnEccN0Vb_7PHE62q_Jwt6iZI
 """
 
-!pip install streamlit
+"""!pip install streamlit
 !pip install openai
-!pip install pytube`
+!pip install pytube`"""
 
 import streamlit as st
 from video_generator import video_tab
