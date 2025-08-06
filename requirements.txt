@@ -1,0 +1,7 @@
+streamlit
+python-docx
+python-pptx
+Pillow
+gtts
+moviepy
+openai
