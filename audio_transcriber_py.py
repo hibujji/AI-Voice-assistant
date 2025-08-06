@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1IvkWkPzVDRf2zxeXwGc67Zh5VHS18qXU
 """
 
-!pip install streamlit
+""" !pip install streamlit """
 
 import streamlit as st
 from utils.whisper_transcriber import transcribe_audio_whisper
