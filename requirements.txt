@@ -1,7 +1,10 @@
 streamlit
+openai
 python-docx
 python-pptx
-Pillow
-gtts
 moviepy
-openai
+gTTS
+Pillow
+PyMuPDF
+SpeechRecognition
+pydub
