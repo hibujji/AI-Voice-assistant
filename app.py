@@ -14,7 +14,7 @@ Original file is located at
 import streamlit as st
 from videogenerator import video_tab
 from chatbot import exam_tab
-from audio_transcriber import transcriber_tab
+from audio_transcriber_py import transcriber_tab
 
 st.set_page_config(page_title="AI Narrator + Exam Bot", layout="wide")
 
