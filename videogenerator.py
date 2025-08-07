@@ -14,7 +14,7 @@ Original file is located at
 !pip install gTTS
 !pip install moviepy"""
 
-import streamlit as st
+"""import streamlit as st
 from utils.extract_doc_py import extract_text_from_docx, extract_text_from_pptx, load_image
 from utils.tts_engine import generate_audio_gtts
 from utils.video_utils import generate_slide_image, create_video_with_audio, split_text_into_chunks
@@ -92,5 +92,33 @@ def video_tab():
                         data=f,
                         file_name="narrated_video.mp4",
                         mime="video/mp4"
-                    )
+                    )"""
+import streamlit as st
+from videogenerator import generate_video_with_ffmpeg
+import base64
+import os
+
+def video_tab():
+    st.header("📄 Upload File to Generate Narrated Video")
+    uploaded_file = st.file_uploader("Upload .docx, .pptx, or .jpg", type=["docx", "pptx", "jpg", "jpeg", "png"])
+
+    if uploaded_file is not None:
+        filename = uploaded_file.name
+
+        with st.spinner("Generating video..."):
+            output_path = generate_video_with_ffmpeg(uploaded_file, filename)
+
+            if output_path and os.path.exists(output_path):
+                st.success("✅ Video generated successfully!")
+                st.video(output_path)
+
+                # Provide download link
+                with open(output_path, "rb") as f:
+                    video_bytes = f.read()
+                    b64 = base64.b64encode(video_bytes).decode()
+                    href = f'<a href="data:video/mp4;base64,{b64}" download="narrated_video.mp4">📥 Download MP4</a>'
+                    st.markdown(href, unsafe_allow_html=True)
+            else:
+                st.error("❌ Failed to generate video.")
+
 
