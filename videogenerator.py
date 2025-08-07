@@ -14,6 +14,7 @@ Original file is located at
 !pip install gTTS
 !pip install moviepy"""
 
+from video_generator import generate_video_with_ffmpeg
 import streamlit as st
 from utils.extract_doc_py import extract_text_from_docx, extract_text_from_pptx, load_image
 from utils.tts_engine import generate_audio_gtts
