@@ -12,8 +12,8 @@ Original file is located at
 !pip install pytube`"""
 
 import streamlit as st
-from video_generator import video_tab
-from chatbot_exam import exam_tab
+from videogenerator import video_tab
+from chatbot import exam_tab
 from audio_transcriber import transcriber_tab
 
 st.set_page_config(page_title="AI Narrator + Exam Bot", layout="wide")
