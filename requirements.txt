@@ -3,6 +3,7 @@ openai
 python-docx
 python-pptx
 moviepy
+imageio-ffmpeg
 gTTS
 Pillow
 PyMuPDF
