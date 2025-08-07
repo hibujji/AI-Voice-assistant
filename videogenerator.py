@@ -7,12 +7,12 @@ Original file is located at
     https://colab.research.google.com/drive/1xaA4A6UoDzoH0jPQA3Z3TJpCA93bOIv8
 """
 
-!pip install streamlit
+"""!pip install streamlit
 !pip install python-docx
 !pip install python-pptx
 !pip install pillow
 !pip install gTTS
-!pip install moviepy
+!pip install moviepy"""
 
 import streamlit as st
 from utils.extract_doc import extract_text_from_docx, extract_text_from_pptx, load_image
