@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1-4GZplB0P-VWrK_Yy4BFBAnQczhho8Um
 """
 
-!pip install moviepy
+"""!pip install moviepy
 !pip install pillow
-!pip install ffmpeg
+!pip install ffmpeg"""
 
 from PIL import Image, ImageDraw, ImageFont
 import tempfile
