@@ -14,7 +14,7 @@ Original file is located at
 !pip install gTTS
 !pip install moviepy"""
 
-from video_generator import generate_video_with_ffmpeg
+"""from video_generator import generate_video_with_ffmpeg
 import streamlit as st
 from utils.extract_doc_py import extract_text_from_docx, extract_text_from_pptx, load_image
 from utils.tts_engine import generate_audio_gtts
@@ -93,5 +93,33 @@ def video_tab():
                         data=f,
                         file_name="narrated_video.mp4",
                         mime="video/mp4"
-                    )
+                    )"""
 
+import streamlit as st
+import os
+from video_generator import generate_video_with_ffmpeg
+
+def video_tab():
+    st.title("🎬 AI Video Generator")
+    st.markdown("Generate a narrated video from text and an image.")
+
+    # Upload image
+    uploaded_image = st.file_uploader("Upload an image (.jpg or .png)", type=["jpg", "png"])
+    user_text = st.text_area("Enter the narration text (will be spoken in the video)")
+
+    image_path = None
+    if uploaded_image:
+        os.makedirs("temp", exist_ok=True)
+        image_path = os.path.join("temp", uploaded_image.name)
+        with open(image_path, "wb") as f:
+            f.write(uploaded_image.read())
+        st.image(image_path, caption="Uploaded Image", use_column_width=True)
+
+    if st.button("🎥 Generate Video"):
+        if not uploaded_image or not user_text.strip():
+            st.warning("Please provide both an image and narration text.")
+        else:
+            with st.spinner("Generating video..."):
+                video_path = generate_video_with_ffmpeg(user_text, image_path)
+                st.success("Video generated successfully!")
+                st.video(video_path)
