@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1Q_cILucT6KQT54HjaxfkWsZQO6_Cp9xD
 """
 
-!pip install python-docx
+"""!pip install python-docx
 !pip install python-pptx
-!pip install pillow
+!pip install pillow"""
 
 from docx import Document
 from pptx import Presentation
