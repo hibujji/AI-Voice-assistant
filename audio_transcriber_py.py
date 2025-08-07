@@ -10,7 +10,7 @@ Original file is located at
 """ !pip install streamlit """
 
 import streamlit as st
-from utils.whisper_transcriber import transcribe_audio_whisper
+from utils.whisper_transcriber_py import transcribe_audio_whisper
 
 def transcriber_tab():
     st.header("🎙️ Whisper Audio Transcriber")
