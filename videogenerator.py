@@ -15,7 +15,7 @@ Original file is located at
 !pip install moviepy"""
 
 import streamlit as st
-from utils.extract_doc import extract_text_from_docx, extract_text_from_pptx, load_image
+from utils.extract_doc_py import extract_text_from_docx, extract_text_from_pptx, load_image
 from utils.tts_engine import generate_audio_gtts
 from utils.video_utils import generate_slide_image, create_video_with_audio, split_text_into_chunks
 import tempfile
