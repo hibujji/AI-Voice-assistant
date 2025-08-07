@@ -11,3 +11,4 @@ PyMuPDF
 SpeechRecognition
 pydub
 pytube
+ffmpeg-python
