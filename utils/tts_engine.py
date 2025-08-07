@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1WYIvapMD7DR7t0B_R23IQWMVQlrsWF_8
 """
 
-!pip install gTTS
+"""!pip install gTTS"""
 
 from gtts import gTTS
 import tempfile
